@@ -1,11 +1,11 @@
 // Dependecies
 require("dotenv").config();
-require("./config/connection");
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
-const PORT = process.env.PORT || 8008;
+const { PORT = 8008 } = process.env;
 const app = express();
+const People = require("./models/people");
 
 // Middleware
 app.use(cors());

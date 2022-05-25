@@ -1,3 +1,8 @@
-require("dotenv").config();
 const mongoose = require("mongoose");
-const DATABASE_URL = process.env.DATABASE_URL;
+
+mongoose.connect(process.env.DATABASE_URL);
+
+mongoose.connection
+  .on("error", (err) => console.log(err.message + "MongoDB Err?"))
+  .on("connected", () => console.log("We Are MongoDB Live!"))
+  .on("disconnected", () => console.log("No Longer Live MongoDB!"));
