@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 // Index
 app.get("/people", async (req, res) => {
   try {
-    res.json(await People.find({}));
+    res.json(await (await People.find({})).reverse());
   } catch (error) {
     res.status(400).json(error);
   }
