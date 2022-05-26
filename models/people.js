@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 require("../config/connection");
 
-const peopleSchema = new mongoose.Schema({});
+const PeopleSchema = new mongoose.Schema({
+  name: String,
+  image: String,
+  title: String,
+});
 
-module.exports = mongoose.model("People", peopleSchema);
+module.exports = mongoose.model("People", PeopleSchema);
